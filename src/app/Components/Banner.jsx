@@ -14,7 +14,7 @@ export default function Banner() {
                         <p className="py-6 text-white">
                            Find your favorites at the best price
                         </p>
-                        <button className="btn bg-[#c440e2]">Get Started</button>
+                        <button className="btn bg-[#201235] text-white p-2 rounded-xl">Get Started</button>
                     </div>
                     <div className="hero-content flex-col lg:flex-row">
                         <img

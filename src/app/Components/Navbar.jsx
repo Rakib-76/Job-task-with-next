@@ -44,20 +44,28 @@ export default function
                         </li> */}
                     </ul>
                 </div>
-                <a className="text-white">daisyUI</a>
+                <a className="text-white">ToolsStation</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <Link href='/'>
                         <li className='text-white'><a>Home</a></li>
                     </Link>
-                    <li className='text-white'><a>Product List</a></li>
-                    <li className='text-white'><a>About</a></li>
+                    <Link href='/services'>
+                        <li className='text-white'><a>ProductList</a></li>
+                    </Link>
+                    <Link href='/about'>
+                        <li className='text-white'><a>About</a></li>
+                    </Link>
                 </ul>
             </div>
-            <div className="navbar-end flex gap-2 text-xl">
-                <p className='text-white'><CiLogin /></p>
-                <a className='text-white'>Login</a>
+            <div className='navbar-end'>
+                <Link href='/register'>
+                    <div className="navbar-end flex gap-1 ">
+                        <p className='text-white'><CiLogin /></p>
+                        <a className='text-white'>Login</a>
+                    </div>
+                </Link>
             </div>
         </div>
     )
