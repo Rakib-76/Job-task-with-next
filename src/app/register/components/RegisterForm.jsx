@@ -1,17 +1,44 @@
 "use client";
-import React from 'react'
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
+import { registerUser } from "@/app/actions/auth/registerUser";
 import Link from 'next/link'
-import { registerUser } from '@/app/actions/auth/registerUser';
 
 export default function RegisterForm() {
-    const handleSubmit = async (e) =>{
+    const router = useRouter();
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const password = form.password.value;
-        await registerUser(name, email, password);
-    }
+        const payload = {
+            name: form.name.value,
+            email: form.email.value,
+            password: form.password.value,
+        };
+
+        const result = await registerUser(payload);
+
+        if (result.success) {
+            Swal.fire({
+                icon: "success",
+                title: "Registration Successful",
+                text: "Redirecting to Home...",
+                timer: 2000,
+                showConfirmButton: false,
+            });
+
+            setTimeout(() => {
+                router.push("/"); // ✅ safe inside setTimeout
+            }, 2000);
+        } else {
+            Swal.fire({
+                icon: "error",
+                title: "Registration Failed",
+                text: result.message || "Something went wrong!",
+            });
+        }
+    };
     return (
         <div>
             <form onSubmit={handleSubmit} className="hero min-h-screen">
