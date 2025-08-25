@@ -8,7 +8,7 @@ export default async function Servicespage() {
   const data = await serviceCollection.find({}).toArray();
     return (
         <div>
-            <h1 className='text-4xl font-bold text-center mt-10 text-white'>Services page</h1>
+            <h1 className='text-4xl font-bold text-center mt-10 text-white'>Product  page</h1>
             <div className='grid grid-cols-3 gap-4 p-4' >
                 {
                     data.map((data) => {
@@ -26,6 +26,7 @@ export default async function Servicespage() {
                     })
                 }
             </div>
+               
         </div>
     )
 }

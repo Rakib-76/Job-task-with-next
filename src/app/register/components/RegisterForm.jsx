@@ -1,12 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import { registerUser } from "@/app/actions/auth/registerUser";
 import Link from 'next/link'
 
 export default function RegisterForm() {
-    const router = useRouter();
+  
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -18,6 +17,7 @@ export default function RegisterForm() {
         };
 
         const result = await registerUser(payload);
+        
 
         if (result.success) {
             Swal.fire({
@@ -28,9 +28,6 @@ export default function RegisterForm() {
                 showConfirmButton: false,
             });
 
-            setTimeout(() => {
-                router.push("/"); // ✅ safe inside setTimeout
-            }, 2000);
         } else {
             Swal.fire({
                 icon: "error",

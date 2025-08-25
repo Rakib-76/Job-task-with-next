@@ -14,14 +14,14 @@ export default async function ServicesDetailspage({ params }) {
   if (!singleData) {
     return (
       <div className='m-10 text-center text-red-500'>
-        <h1>Service Not Found</h1>
+        <h1>Product Not Found</h1>
       </div>
     );
   }
 
   return (
     <div className='m-10  '>
-      <h1 className='text-center font-bold text-2xl mb-6 text-white'>Service Details</h1>
+      <h1 className='text-center font-bold text-2xl mb-6 text-white'>Product Details</h1>
       <div className='flex flex-row-reverse justify-center items-center p-10 gap-10 rounded-lg shadow-lg shadow-[#201235] border border-zinc-300'>
         <div>
           <h2 className='text-xl font-semibold text-white'>Name: {singleData.name}</h2>

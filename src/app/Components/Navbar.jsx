@@ -1,6 +1,8 @@
+"use client"
 import Link from 'next/link'
 import React from 'react'
 import { CiLogin } from "react-icons/ci";
+import { MdAppRegistration } from "react-icons/md";
 
 export default function
     () {
@@ -61,6 +63,12 @@ export default function
             </div>
             <div className='navbar-end'>
                 <Link href='/register'>
+                    <div className="navbar-end flex gap-1 ">
+                        <p className='text-white'><MdAppRegistration /></p>
+                        <a className='text-white'>Register</a>
+                    </div>
+                </Link>
+                <Link href='/login'>
                     <div className="navbar-end flex gap-1 ">
                         <p className='text-white'><CiLogin /></p>
                         <a className='text-white'>Login</a>

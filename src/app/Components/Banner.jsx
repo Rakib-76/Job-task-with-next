@@ -24,6 +24,7 @@ export default function Banner() {
                     </div>
                 </div>
             </div>
+            <div className='border-b-2 border-b-zinc-500 shadow-2xl'></div>
         </div>
     )
 }
