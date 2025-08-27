@@ -3,6 +3,7 @@ import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
 export const authOptions = {
+     secret: process.env.NEXTAUTH_SECRET, 
     // Configure one or more authentication providers
     providers: [
         CredentialsProvider({
