@@ -11,13 +11,13 @@ export default function Navbar() {
     <div className="navbar max-w-10/12 mx-auto">
       <div className="navbar-start">
         <Link href='/'>
-          <a className="text-white">ToolsStation</a>
+          <p className="text-white">GadgetStation</p>
         </Link>
       </div>
 
       <div className='navbar-end flex gap-2'>
         {status === "loading" ? (
-          <span className="text-white">Loading...</span>
+         <span className="loading loading-spinner loading-xl text-white"></span>
         ) : !session ? (
           <>
             <Link href='/register'>
@@ -26,7 +26,7 @@ export default function Navbar() {
                 <span className='text-white'>Register</span>
               </div>
             </Link>
-            <Link href='/login'>
+            <Link href='/logIn'>
               <div className="flex gap-1 items-center">
                 <CiLogin className='text-white text-xl' />
                 <span className='text-white'>Login</span>

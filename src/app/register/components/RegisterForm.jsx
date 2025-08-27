@@ -56,7 +56,7 @@ export default function RegisterForm() {
                 <label className="label">Password</label>
                 <input type="password" className="input" placeholder="Password" name="password" />
                 <button className="btn btn-neutral mt-4">Register</button>
-                <p>Already have an account, <span className='text-blue-700 border-b'><Link href='/login'>Click here</Link></span></p>
+                <p>Already have an account, <span className='text-blue-700 border-b'><Link href='/logIn'>Click here</Link></span></p>
               </fieldset>
             </div>
           </div>
