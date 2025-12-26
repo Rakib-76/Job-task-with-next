@@ -72,22 +72,26 @@ import { FaMapMarkerAlt, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram } from 
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 pt-10 px-5 pb-10">
+    <footer className="bg-gray-100 pt-10 px-5 pb-10 ">
       {/* Center and limit width to 1440px */}
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="mx-auto w-full max-w-[1220px] min-h-[195px]">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-10">
           {/* Left - Logo & Contact */}
           <div className="flex-1">
             {/* Logos */}
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/logo1.png" alt="Logo 1" className="w-12 h-12 object-contain" />
-              <img src="/logo2.png" alt="Logo 2" className="w-12 h-12 object-contain" />
+            <div className="w-[120px] h-[67px] mb-7">
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
+
 
             {/* Contact Info */}
             <div className="flex items-center gap-2 text-gray-700 mb-2">
-              <FaMapMarkerAlt /> 
+              <FaMapMarkerAlt />
               <span>29 SE 2nd Ave, Miami Florida 33131, United States</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700 mb-2">
@@ -97,20 +101,27 @@ const Footer = () => {
             </div>
             <div className="font-bold text-gray-900 mb-4">(+92) 3942 7879</div>
 
+            <div className="font-roboto font-bold text-[16px]">
+              Payment Channel
+            </div>
+
+
             {/* Payment Channels */}
-            <div className="flex flex-wrap gap-2 items-center mt-4">
-              <img src="/visa.png" alt="Visa" className="h-8" />
-              <img src="/mastercard.png" alt="Mastercard" className="h-8" />
-              <img src="/nogod.png" alt="Nagad" className="h-8" />
-              <img src="/bkash.png" alt="bKash" className="h-8" />
-              <img src="/rocket.png" alt="Rocket" className="h-8" />
-              <img src="/upay.png" alt="Upay" className="h-8" />
-              <img src="/taptap.png" alt="Taptap Send" className="h-8" />
-              <img src="/cellfin.png" alt="Cellfin" className="h-8" />
-              <img src="/citybank.png" alt="City Bank" className="h-8" />
-              <img src="/islami.png" alt="Islami Bank" className="h-8" />
-              <img src="/bracbank.png" alt="BRAC Bank" className="h-8" />
-              <img src="/ucb.png" alt="UCB" className="h-8" />
+            <div className="flex gap-10 items-center mt-4">
+              <img src="/151a1966a66289eaa05139dc4a944b66b2935b26.png" alt="Visa" className="h-8" />
+              <img src="/475493d947d902d6b3f9a1fe62d4a283a4385a12.png" alt="Mastercard" className="h-8" />
+              <img src="/4fc0a513aad0f1aa8e875d72e666b239161b5f72.png" alt="Nagad" className="h-8" />
+              <img src="/5c9d82dae878dde3128a19388d23ffc584239220.png" alt="bKash" className="h-8" />
+              <img src="/79032e9756507b8023aecf01d597d31d2608a62b.png" alt="Rocket" className="h-8" />
+              <img src="/86ca0af12dddc5ea7e18299202bbd5b65e9d604f.jpg" alt="Upay" className="h-8" />
+              <img src="/a0fb8616fb857309912886c3915fec83f1db7188.png" alt="Taptap Send" className="h-8" />
+              <img src="/afb364b4b3ef2c607fa6cb4d9e73e325af53d26f.png" alt="Cellfin" className="h-8" />
+              <img src="/c0f3422c00903de77ffc5b4c0349dd8cd74f93c1.png" alt="City Bank" className="h-8" />
+              <img src="/c7c052af79df39de56c787154725e89c164864b9.png" alt="Islami Bank" className="h-8" />
+              <img src="/deba1380977cdedf97cce47eff3c8fbd68b659aa.jpg" alt="BRAC Bank" className="h-8" />
+              <img src="/ead701f9f283fabc59b5d4c6627b101aa3c96f1d.png" alt="UCB" className="h-8" />
+              <img src="/f7b3e656a522fd0e4eb960ec09f9cd96928733c4.png" alt="UCB" className="h-8" />
+              <img src="/ff47870dd89c3ae1a988f43c6c64c4dac000014f.png" alt="UCB" className="h-8" />
             </div>
           </div>
 
@@ -139,7 +150,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-10 border-t border-gray-300 pt-5 flex flex-col lg:flex-row justify-between items-center gap-4">
+        <div className=" mt-10 border-t border-gray-300 pt-5 flex flex-col lg:flex-row justify-between items-center gap-4">
           {/* Copyright */}
           <p className="text-gray-700">
             Copyright © <span className="text-orange-500 font-semibold">360D Soul Limited</span> 2025. All rights reserved.
@@ -147,6 +158,8 @@ const Footer = () => {
 
           {/* Social & Policies */}
           <div className="flex items-center gap-6">
+
+
             {/* Social Icons */}
             <div className="flex gap-4 text-gray-700">
               <FaFacebookF className="hover:text-blue-600 cursor-pointer" />
