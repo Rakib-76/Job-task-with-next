@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import ClientProvider from "./logIn/layout";
+// import ClientProvider from "./logIn/layout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClientProvider>
+        {/* <ClientProvider> */}
           <div className="bg-black">
             <div className="">
               <Navbar />
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
               {/* <Footer /> */}
             </footer>
           </div>
-        </ClientProvider>
+        {/* </ClientProvider> */}
       </body>
     </html>
   );

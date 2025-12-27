@@ -10,6 +10,7 @@ import ProductSection from "./Components/ProductSection";
 import Footer from "./Components/Footer";
 
 
+
 export default function Home() {
   return (
     <section className="bg-[#ffffff] relative">
@@ -23,6 +24,7 @@ export default function Home() {
     <FeatureGrid/>
    <ProductSection/>
    <Footer/>
+  
     </section>
   );
 }
