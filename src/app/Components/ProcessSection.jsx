@@ -33,7 +33,7 @@ const ProcessSection = () => {
 
                     {/* Paragraph */}
                     <p className="text-[16px] font-normal text-[#464646] max-w-[550px] mb-2">
-                      At  Zaheen Knitwear Ltd., we pride ourselves on being your reliable partner for apparel production. Our commitment to ethical manufacturing ensures that every garment is crafted with care and integrity.
+                        At  Zaheen Knitwear Ltd., we pride ourselves on being your reliable partner for apparel production. Our commitment to ethical manufacturing ensures that every garment is crafted with care and integrity.
                     </p>
 
                     {/* Learn More Button */}

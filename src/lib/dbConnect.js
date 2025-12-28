@@ -1,21 +1,48 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
+
 export const collectionNameObj = {
-  servicesCollection:"tools",
-  userCollection:"test_user"
+  servicesCollection: "tools",
+  userCollection: "test_user",
+  productCollection: "products", // Added for products
+  cartCollection: "carts",       // Added for carts
+  orderCollection: "orders"      // Added for orders
 }
 
-export default function dbConnect (collectionName){
-  
-  const uri = process.env.NEXT_PUBLIC_MONGODB_URI
-  // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-  const client = new MongoClient(uri, {
-    serverApi: {
-      version: ServerApiVersion.v1,
-      strict: true,
-      deprecationErrors: true,
-    }
-  });
-  return client.db(process.env.DB_NAME).collection(collectionName)
+const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
+const options = {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+};
+
+let client;
+let clientPromise;
+
+if (!process.env.NEXT_PUBLIC_MONGODB_URI) {
+  throw new Error("Please add your Mongo URI to .env.local");
+}
+
+if (process.env.NODE_ENV === "development") {
+  // In development mode, use a global variable so that the value
+  // is preserved across module reloads caused by HMR (Hot Module Replacement).
+  if (!global._mongoClientPromise) {
+    client = new MongoClient(uri, options);
+    global._mongoClientPromise = client.connect();
+  }
+  clientPromise = global._mongoClientPromise;
+} else {
+  // In production mode, it's best to not use a global variable.
+  client = new MongoClient(uri, options);
+  clientPromise = client.connect();
+}
+
+// Export a module-scoped MongoClient promise. By doing this in a
+// separate module, the client can be shared across functions.
+export default async function dbConnect(collectionName) {
+  const client = await clientPromise;
+  return client.db(process.env.DB_NAME).collection(collectionName);
 }
 
 

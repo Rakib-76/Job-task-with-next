@@ -1,10 +1,18 @@
 "use client";
 
+import { signIn } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { FaFacebookF, FaApple, FaGoogle, FaEnvelope, FaLock, FaEye } from "react-icons/fa";
 
 const LoginModal = ({ open, onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+
+  const handleGoogleLogin = () => {
+    setIsGoogleLoading(true);
+    signIn("google", { callbackUrl: "/" });
+  };
+
 
   // Close on ESC
   useEffect(() => {
@@ -114,9 +122,14 @@ const LoginModal = ({ open, onClose }) => {
                 <button className="flex-1 h-[44px] bg-white rounded-md shadow flex items-center justify-center">
                   <FaApple className="text-black" />
                 </button>
-                <button className="flex-1 h-[44px] bg-white rounded-md shadow flex items-center justify-center">
+                <button
+                  onClick={handleGoogleLogin}
+                  disabled={isGoogleLoading}
+                  className={`flex-1 h-[44px] bg-white rounded-md shadow flex items-center justify-center ${isGoogleLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+                >
                   <FaGoogle className="text-red-500" />
                 </button>
+
               </div>
             </div>
           </div>

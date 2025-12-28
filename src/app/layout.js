@@ -47,13 +47,15 @@ export const metadata = {
 // }
 
 
+import Providers from "./Providers";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <ClientProvider> */}
+        <Providers>
           <div className="bg-black">
             <div className="">
               <Navbar />
@@ -67,7 +69,7 @@ export default function RootLayout({ children }) {
               {/* <Footer /> */}
             </footer>
           </div>
-        {/* </ClientProvider> */}
+        </Providers>
       </body>
     </html>
   );

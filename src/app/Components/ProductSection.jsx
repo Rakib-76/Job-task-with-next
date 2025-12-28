@@ -1,15 +1,19 @@
 "use client";
 
 import { FaShoppingCart, FaHeart, FaEye, FaShareAlt } from "react-icons/fa";
-
-const products = [
-  { id: 1, name: "Woman Apparel", price: "৳ 1,000.00 - ৳ 1,00,00.00", img: "/model.jpg" },
-  { id: 2, name: "Man Apparel", price: "৳ 1,000.00 - ৳ 1,00,00.00", img: "/zym.jpg" },
-  { id: 3, name: "Sports Wear", price: "৳ 1,000.00 - ৳ 1,00,00.00", img: "/jents.jpg" },
-  { id: 4, name: "Nightwear", price: "৳ 1,000.00 - ৳ 1,00,00.00", img: "/lady.jpg" },
-];
+import { products } from "@/lib/products";
+import { useCart } from "@/context/CartContext";
+import { useRouter } from "next/navigation";
 
 const ProductSection = () => {
+  const { addToCart, openCheckout } = useCart();
+  const router = useRouter();
+
+  const handleBuyNow = (product) => {
+    addToCart(product);
+    openCheckout();
+  };
+
   return (
     <section className="py-10 px-5 md:px-20 mx-auto max-w-[1440px]">
       {/* Header */}
@@ -28,12 +32,12 @@ const ProductSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <div
-            key={product.id}
+            key={product._id}
             className="bg-white rounded-lg shadow relative overflow-hidden group"
           >
             {/* Product Image */}
             <img
-              src={product.img}
+              src={product.image}
               alt={product.name}
               className="w-full h-[270px] object-cover"
             />
@@ -58,15 +62,21 @@ const ProductSection = () => {
               </h3>
 
               <p className="font-urbanist font-semibold text-[22px] text-black mb-3">
-                {product.price}
+                ৳ {product.price}
               </p>
 
               {/* Buttons */}
               <div className="flex gap-2">
-                <button className="flex-1 flex items-center justify-center gap-1 px-3 py-1 bg-[#cdf0ef] text-gray-800 rounded hover:bg-[#9fdcdc] transition">
+                <button
+                  onClick={() => addToCart(product)}
+                  className="flex-1 flex items-center justify-center gap-1 px-3 py-1 bg-[#cdf0ef] text-gray-800 rounded hover:bg-[#9fdcdc] transition"
+                >
                   <FaShoppingCart /> Add To Cart
                 </button>
-                <button className="flex-1 px-3 py-1 bg-[#07b4b0] text-white rounded hover:bg-[#049494] transition">
+                <button
+                  onClick={() => handleBuyNow(product)}
+                  className="flex-1 px-3 py-1 bg-[#07b4b0] text-white rounded hover:bg-[#049494] transition"
+                >
                   Buy Now
                 </button>
               </div>
