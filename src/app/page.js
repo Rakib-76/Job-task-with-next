@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Banner from "./Components/Banner";
-import Servicespage from "./services/page";
-import AboutSection from "./about/page";
+// import Servicespage from "./services/page";
+// import AboutSection from "./about/page";
 import InfoAndPartners from "./Components/InfoAndPartners";
 import OverlayCards from "./Components/OverlayCards";
 import ProcessSection from "./Components/ProcessSection";
