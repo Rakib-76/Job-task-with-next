@@ -63,7 +63,7 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { IoChevronDown } from "react-icons/io5";
-import LoginCard from "./LoginCard";
+
 import LoginModal from "./LoginModal";
 import CheckoutModal from "./CheckoutModal";
 import { useCart } from "@/context/CartContext";
@@ -176,11 +176,8 @@ const Navbar = () => {
       </header>
 
       {/* ===== LOGIN MODAL ===== */}
-      <LoginModal open={openLogin} onClose={() => setOpenLogin(false)}>
-        <LoginModal open={openLogin} onClose={() => setOpenLogin(false)}>
-          <LoginCard onClose={() => setOpenLogin(false)} />
-        </LoginModal>
-      </LoginModal>
+      {/* ===== LOGIN MODAL ===== */}
+      <LoginModal open={openLogin} onClose={() => setOpenLogin(false)} />
 
       {/* ===== CHECKOUT MODAL ===== */}
       <CheckoutModal />
