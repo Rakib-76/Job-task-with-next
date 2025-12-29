@@ -1,30 +1,42 @@
-# GadgetStation
+# E-Commerce Website
 
-## Project Description
-GadgetStation is an e-commerce platform for electronic accessories where users can browse, view product details, and make purchases. Products include microphones, headphones, routers, and various other electronic gadgets. Users must log in to access detailed product information and complete purchases.
-
----
-
-## Features
-- User authentication (login & registration)
-- Browse all electronic products
-- View detailed product information
-- Secure purchasing functionality (authenticated users only)
-- Responsive design for mobile, tablet, and desktop
+A full-featured **e-commerce website** built with **Next.js**, **Tailwind CSS**, **MongoDB**, and **NextAuth**. Users can browse products, add them to the cart, manage their cart, sign in with Google, view their profile, and logout.
 
 ---
 
-## Setup & Installation
+## 🔥 Features
 
-### Prerequisites
-- Next.js15
-- Node.js >= 18
-- npm or yarn
-- MongoDB instance (local or cloud)
-- Optional: Vercel account for deployment
+- **Responsive Navbar** with links to Home, Products, Features, Process, Profile, and SignIn/Logout.
+- **Banner Section** to showcase promotions or featured products.
+- **Product Listing** with details such as name, price, and image.
+- **Feature Section** highlighting website/product features.
+- **Process Section** explaining steps to use the website or buy products.
+- **User Authentication** using **NextAuth** with Google Sign-In.
+- **Cart Functionality**:
+  - Add products to the cart
+  - View cart items
+  - Remove products from the cart
+- **User Profile**:
+  - View user information
+  - View cart items after login
+- **Logout** functionality
 
-### Installation Steps
+---
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js, React, Tailwind CSS
+- **Backend**: Next.js API routes
+- **Database**: MongoDB
+- **Authentication**: NextAuth (Google OAuth)
+- **State Management**: React Context / localStorage (for cart)
+
+---
+
+## ⚡ Installation
+
 1. **Clone the repository**
+
 ```bash
-git clone https://github.com/rakib-76/GadgetStation.git
-cd GadgetStation
+git clone https://github.com/your-username/ecommerce-nextjs.git
+cd ecommerce-nextjs
